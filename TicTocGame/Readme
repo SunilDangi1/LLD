@@ -1,0 +1,55 @@
+classDiagram
+    class TicTacToeGame {
+        -Board board
+        -Player player1
+        -Player player2
+        -Player currentPlayer
+        -GameState currentState
+        -int movesCount
+        -int size
+        +TicTacToeGame(size, player1, player2)
+        +start()
+        -switchPlayer()
+        -checkForWin(row, col, mark): boolean
+        -checkForDraw(): boolean
+        -processMove(row, col)
+        +getCurrentState(): GameState
+    }
+
+    class Board {
+        -char[][] cells OR Cell[][] cells
+        -int size
+        +Board(size)
+        +isValidMove(row, col): boolean
+        +placeMark(row, col, mark): void
+        +getMark(row, col): char
+        +isFull(): boolean
+        +printBoard(): void
+        +getSize(): int
+    }
+
+    class Player {
+        -String name
+        -char mark
+        +Player(name, mark)
+        +Player(name, mark, MoveStrategy)
+        +getName(): String
+        +getMark(): char
+    }
+
+    enum GameState {
+        IN_PROGRESS
+        WON
+        DRAW
+    }
+
+    TicTacToeGame "1" -- "1" Board : contains >
+    TicTacToeGame "1" -- "2" Player : has >
+    Board "1" -- "*" Cell : contains >
+
+
+
+    interface MoveStrategy {
+        + makeMove(board, mark)
+    }
+    HumanStrategy impments MoveStrategy
