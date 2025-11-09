@@ -1,4 +1,4 @@
-package InventoryManagmentSystem;
+          package InventoryManagmentSystem;
 
 import java.util.ArrayList;
 import java.util.HashMap;
