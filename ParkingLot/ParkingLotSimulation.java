@@ -341,7 +341,7 @@ class ExitTerminal extends Terminal {
  */
 class ParkingLot {
     private static ParkingLot instance; // The single instance of the class
-    private String name;
+     private String name;
     private double hourlyRate;
     private Map<ParkingSpotType, List<ParkingSpot>> parkingSpots;
     private Map<String, Ticket> activeTickets; // Stores currently active tickets (ticket_id -> Ticket object)

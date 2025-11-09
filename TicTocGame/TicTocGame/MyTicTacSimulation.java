@@ -125,7 +125,7 @@ class Player{
     }
 
 }
-class TicTacToeGame{
+class TicTacToeGame{+
     private Board board;
     private int size;
     private Player p1;
